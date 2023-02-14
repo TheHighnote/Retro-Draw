@@ -10,6 +10,12 @@ import React from 'react';
  * - handleClick, which will be a function to run when the cell has been clicked on 
  */
 const Cell = (props) => {
+  const color = props.color
+  const isActive = props.isActive
+  const handleClick = props.handleClick
+
+
+
   /* Create constants for color, isActive, and handleClick, reading the value off of props */
 
   /**
@@ -21,7 +27,10 @@ const Cell = (props) => {
    * - set the onClick property to be equal to the handleClick function
    *    passed in with the props
    */
-  return <div className="cell"></div>
+  return 
+  (isActive) ? <div className = "cell active"></div> : <div className='cell'></div>
+
+  
 }
 
 export default Cell;
