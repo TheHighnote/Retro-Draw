@@ -17,6 +17,7 @@ const Palette = (props) => {
 
 const activeColor = props.activeColor;
 const setActiveColor = props.setActiveColor;
+// const handleClick = () => setActiveColor(color);
 
 
 
@@ -40,7 +41,7 @@ const setActiveColor = props.setActiveColor;
       COLORS.map((color, index) => {
         console.log(color, 'color');
 
-      return  <Cell color={color} isActive={activeColor === color} key={`  Palette- ${index}` }/>
+      return  <Cell color={color} isActive={activeColor === color} handleClick = {() => setActiveColor(color)} key={`  Palette- ${index}` }/>
         
       })
       }
