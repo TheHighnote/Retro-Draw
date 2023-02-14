@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Cell from './Cell';
 
 /* Need to map over the COLORS array, so we pull them from ../utils */
@@ -10,9 +10,15 @@ import { COLORS } from '../utils';
  * to other components. 
  */
 const Palette = (props) => {
+  // , {activeColor, setActiveColor}
   /**
    * Create constants for activeColor and setActiveColor, reading the value off of the props
    */
+
+const activeColor = props.activeColor;
+const setActiveColor = props.setActiveColor;
+// const [activeColor, setActiveColor] = useState('');
+
 
 
   /**
@@ -25,7 +31,23 @@ const Palette = (props) => {
    *    - has a prop of handleClick which is a function that calls setActiveColor, passing it 
    *      the color from the map
    */
-  return <div className="palette"></div>
+  // {
+  //   COLORS.map((color, idx) => {
+  //     activeColor ===  props.color ? isActive = true : '';
+      
+  //   })
+    return (<div className="palette">
+      {
+      COLORS.map((color, index) => {
+        console.log(color, 'color');
+
+      return  <Cell color={color} isActive={activeColor === color} key={`  Palette- ${index}` }/>
+        
+      })
+      }
+    </div>)
+ 
+ 
 }
 
 export default Palette;
