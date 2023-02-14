@@ -17,7 +17,6 @@ const Palette = (props) => {
 
 const activeColor = props.activeColor;
 const setActiveColor = props.setActiveColor;
-// const [activeColor, setActiveColor] = useState('');
 
 
 
