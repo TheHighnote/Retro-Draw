@@ -27,7 +27,9 @@ const Cell = (props) => {
    * - set the onClick property to be equal to the handleClick function
    *    passed in with the props
    */
-  return ((isActive) ? <div className = "cell active" style={{backgroundColor: color}}></div> : <div className='cell'></div>)
+  // console.log(handleClick, 'handleClick!');
+  console.log(props, 'props');
+  return (isActive ? <div onClick={handleClick} className = "cell active" style={{backgroundColor: color}}></div> : <div className='cell' style={{backgroundColor: color}} onClick={handleClick}></div>)
 }
 
 export default Cell;
